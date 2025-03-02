@@ -28,7 +28,6 @@ export default [
         sourceType: 'module',
       },
     },
-    extends: ['eslint:recommended', 'prettier'],
     plugins: { import: importPlugin },
     rules: {
       ...importPlugin.configs.recommended.rules,
