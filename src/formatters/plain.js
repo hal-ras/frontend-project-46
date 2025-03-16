@@ -12,20 +12,23 @@ const formatValue = (value) => {
 
 const plain = (tree, path = '') => {
   const lines = tree.flatMap((node) => {
-    const { key, type, value, oldValue, newValue, children } = node;
+    const {
+      key,
+      type,
+      value,
+      oldValue,
+      newValue,
+      children
+    } = node;
     const fullPath = path ? `${path}.${key}` : key;
 
     switch (type) {
       case 'added':
-        return `Property '${fullPath}' was added with value: ${formatValue(
-          value
-        )}`;
+        return `Property '${fullPath}' was added with value: ${formatValue(value)}`;
       case 'removed':
         return `Property '${fullPath}' was removed`;
       case 'changed':
-        return `Property '${fullPath}' was updated. From ${formatValue(
-          oldValue
-        )} to ${formatValue(newValue)}`;
+        return `Property '${fullPath}' was updated. From ${formatValue(oldValue)} to ${formatValue(newValue)}`;
       case 'nested':
         return plain(children, fullPath);
       case 'unchanged':

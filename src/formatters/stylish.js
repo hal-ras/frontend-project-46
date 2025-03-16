@@ -8,7 +8,14 @@ const stylish = (tree, depth = 1) => {
   const closingIndent = ' '.repeat((depth - 1) * spacesCount);
 
   const lines = tree.map((node) => {
-    const { key, type, value, oldValue, newValue, children } = node;
+    const {
+      key,
+      type,
+      value,
+      oldValue,
+      newValue,
+      children
+    } = node;
 
     switch (type) {
       case 'added':
@@ -16,10 +23,7 @@ const stylish = (tree, depth = 1) => {
       case 'removed':
         return `${indent}- ${key}: ${stringify(value, depth + 1)}`;
       case 'changed':
-        return `${indent}- ${key}: ${stringify(
-          oldValue,
-          depth + 1
-        )}\n${indent}+ ${key}: ${stringify(newValue, depth + 1)}`;
+        return `${indent}- ${key}: ${stringify(oldValue, depth + 1)}\n${indent}+ ${key}: ${stringify(newValue, depth + 1)}`;
       case 'nested':
         return `${baseIndent}${key}: ${stylish(children, depth + 1)}`;
       case 'unchanged':

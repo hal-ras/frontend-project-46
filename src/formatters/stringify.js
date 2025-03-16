@@ -10,9 +10,9 @@ const stringify = (value, depth) => {
     return String(value);
   }
 
-  const lines = Object.entries(value).map(
-    ([key, val]) => `${indent}${key}: ${stringify(val, depth + 1)}`
-  );
+  const lines = Object
+    .entries(value)
+    .map(([key, val]) => `${indent}${key}: ${stringify(val, depth + 1)}`);
 
   return `{\n${lines.join('\n')}\n${bracketIndent}}`;
 };

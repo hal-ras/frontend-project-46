@@ -34,14 +34,8 @@ const buildTree = (obj1, obj2) => {
 };
 
 export default (filepath1, filepath2, format = 'stylish') => {
-  const content1 = fs.readFileSync(
-    path.resolve(process.cwd(), '__fixtures__', filepath1),
-    'utf-8'
-  );
-  const content2 = fs.readFileSync(
-    path.resolve(process.cwd(), '__fixtures__', filepath2),
-    'utf-8'
-  );
+  const content1 = fs.readFileSync(path.resolve(process.cwd(), '__fixtures__', filepath1), 'utf-8');
+  const content2 = fs.readFileSync(path.resolve(process.cwd(), '__fixtures__', filepath2), 'utf-8');
   const parsedData1 = parse(content1, path.extname(filepath1));
   const parsedData2 = parse(content2, path.extname(filepath2));
 
@@ -50,10 +44,7 @@ export default (filepath1, filepath2, format = 'stylish') => {
 
   if (!formatter) {
     throw new Error(
-      `Unknown format: ${format}. Available formats: ${Object.keys(
-        formatters
-      ).join(', ')}`
-    );
+      `Unknown format: ${format}`);
   }
   return formatter(tree);
 };
