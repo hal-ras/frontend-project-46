@@ -5,6 +5,7 @@ const stylish = (tree, depth = 1) => {
   const indentSize = depth * spacesCount;
   const indent = ' '.repeat(indentSize - 2);
   const baseIndent = ' '.repeat(indentSize);
+  const closingIndent = ' '.repeat((depth - 1) * spacesCount);
 
   const lines = tree.map((node) => {
     const { key, type, value, oldValue, newValue, children } = node;
@@ -20,10 +21,7 @@ const stylish = (tree, depth = 1) => {
           depth + 1
         )}\n${indent}+ ${key}: ${stringify(newValue, depth + 1)}`;
       case 'nested':
-        return `${baseIndent}${key}: {\n${stylish(
-          children,
-          depth + 1
-        )}\n${baseIndent}}`;
+        return `${baseIndent}${key}: ${stylish(children, depth + 1)}`;
       case 'unchanged':
         return `${baseIndent}${key}: ${stringify(value, depth + 1)}`;
       default:
@@ -31,7 +29,7 @@ const stylish = (tree, depth = 1) => {
     }
   });
 
-  return lines.join('\n');
+  return `{\n${lines.join('\n')}\n${closingIndent}}`;
 };
 
 export default stylish;

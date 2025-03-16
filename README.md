@@ -6,6 +6,10 @@
 
 [![asciicast](https://asciinema.org/a/wq01LvEZQNUfRKTwLIjDPNjuB.svg)](https://asciinema.org/a/wq01LvEZQNUfRKTwLIjDPNjuB)
 
-### Gendiff stylish json/yml
+### Gendiff stylish
 
 [![asciicast](https://asciinema.org/a/kTs16FJkTBSwL6eOri0UCsEDR.svg)](https://asciinema.org/a/kTs16FJkTBSwL6eOri0UCsEDR)
+
+### Gendiff plain
+
+[![asciicast](https://asciinema.org/a/O7AFtmg1ih9FDnNZhM8K3VGZ7.svg)](https://asciinema.org/a/O7AFtmg1ih9FDnNZhM8K3VGZ7)

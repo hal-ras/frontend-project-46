@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import _ from 'lodash';
 import parse from './parser.js';
-import stylish from './formatters/stylish.js';
+import formatters from './formatters/index.js';
 
 const buildTree = (obj1, obj2) => {
   const keys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)));
@@ -33,10 +33,6 @@ const buildTree = (obj1, obj2) => {
   });
 };
 
-const formatters = {
-  stylish,
-};
-
 export default (filepath1, filepath2, format = 'stylish') => {
   const content1 = fs.readFileSync(
     path.resolve(process.cwd(), '__fixtures__', filepath1),
@@ -59,5 +55,5 @@ export default (filepath1, filepath2, format = 'stylish') => {
       ).join(', ')}`
     );
   }
-  return `{\n${formatter(tree)}\n}`;
+  return formatter(tree);
 };
