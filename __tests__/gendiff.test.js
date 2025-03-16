@@ -38,6 +38,18 @@ describe('gendiff', () => {
     });
   });
 
+  describe('json', () => {
+    test('json', () => {
+      const expected = readFile('expected-json.txt').trim();
+      expect(gendiff('file1.json', 'file2.json', 'json')).toEqual(expected);
+    });
+
+    test('yml', () => {
+      const expected = readFile('expected-json.txt').trim();
+      expect(gendiff('file1.yml', 'file2.yml', 'json')).toEqual(expected);
+    });
+  });
+
   test('unknown format', () => {
     const invalidData = '{}';
     const invalidFormat = '.unknown';

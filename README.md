@@ -13,3 +13,7 @@
 ### Gendiff plain
 
 [![asciicast](https://asciinema.org/a/O7AFtmg1ih9FDnNZhM8K3VGZ7.svg)](https://asciinema.org/a/O7AFtmg1ih9FDnNZhM8K3VGZ7)
+
+### Gendiff json
+
+[![asciicast](https://asciinema.org/a/WN5SRSgXvGPctNBeHN2CpghVg.svg)](https://asciinema.org/a/WN5SRSgXvGPctNBeHN2CpghVg)
