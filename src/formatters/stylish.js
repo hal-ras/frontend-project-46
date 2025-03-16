@@ -14,7 +14,7 @@ const stylish = (tree, depth = 1) => {
       value,
       oldValue,
       newValue,
-      children
+      children,
     } = node;
 
     switch (type) {

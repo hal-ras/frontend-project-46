@@ -44,7 +44,8 @@ export default (filepath1, filepath2, format = 'stylish') => {
 
   if (!formatter) {
     throw new Error(
-      `Unknown format: ${format}`);
+      `Unknown format: ${format}`
+    );
   }
   return formatter(tree);
 };

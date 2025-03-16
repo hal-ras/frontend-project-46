@@ -18,7 +18,7 @@ const plain = (tree, path = '') => {
       value,
       oldValue,
       newValue,
-      children
+      children,
     } = node;
     const fullPath = path ? `${path}.${key}` : key;
 
